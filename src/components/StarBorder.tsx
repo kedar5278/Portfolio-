@@ -26,7 +26,6 @@ const StarBorder = ({
   ...rest
 }: StarBorderProps) => {
   return (
-    // @ts-expect-error - dynamic component prop spreading
     <Component
       className={`star-border-container ${className}`}
       style={{ padding: `${thickness}px 0` }}
