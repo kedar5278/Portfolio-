@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 interface StarBorderProps {
   children: ReactNode;
-  as?: "button" | "a" | "div";
+  as?: "button" | "a" | "div" | "span";
   className?: string;
   color?: string;
   speed?: string;
