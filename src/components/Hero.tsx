@@ -3,7 +3,7 @@
 import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/lib/data";
-import { FiMail, FiPhone, FiMapPin, FiArrowDown } from "react-icons/fi";
+import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import ShinyText from "./ShinyText";
 import Magnet from "./Magnet";
 
@@ -97,17 +97,7 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/10 rounded-full blur-[100px] animate-float-delayed" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/5 rounded-full blur-[150px]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8"
-        >
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-dark-300">Available for new opportunities</span>
-        </motion.div>
-
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Profile Photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -126,8 +116,6 @@ export default function Hero() {
                 />
               </div>
             </div>
-            {/* Online dot */}
-            <div className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-green-400 border-[3px] border-dark-950 z-10 animate-pulse" />
           </div>
         </motion.div>
 
@@ -139,13 +127,16 @@ export default function Hero() {
         >
           <span className="text-white">Hi, I'm</span>
           <br />
-          <ShinyText
-            text={personalInfo.name}
-            speed={3}
-            color="#818cf8"
-            shineColor="#ffffff"
-            className="gradient-text"
-          />
+          <span className="inline-flex items-center gap-3">
+            <ShinyText
+              text={personalInfo.name}
+              speed={3}
+              color="#818cf8"
+              shineColor="#ffffff"
+              className="gradient-text"
+            />
+            <span className="w-3 h-3 rounded-full bg-green-400 animate-pulse inline-block shrink-0" />
+          </span>
         </motion.h1>
 
         <motion.p
@@ -165,6 +156,17 @@ export default function Hero() {
         >
           {personalInfo.subtitle}
         </motion.p>
+
+        {/* Availability Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8 sm:mb-10"
+        >
+          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0" />
+          <span className="text-xs sm:text-sm text-dark-300">Ready for new opportunities</span>
+        </motion.div>
 
         {/* Quick Info Pills */}
         <motion.div
@@ -210,23 +212,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.button
-          onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-dark-500 hover:text-primary-400 transition-colors"
-        >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <FiArrowDown className="w-5 h-5" />
-        </motion.button>
-      </motion.div>
     </section>
   );
 }
