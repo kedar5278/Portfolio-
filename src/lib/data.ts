@@ -109,7 +109,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "TourSpot",
-    url: "https://tourspot.onrender.com",
+    url: "https://tourspot.vercel.app/",
     description: "Explore India with curated travel packages — a full-stack travel booking platform featuring destination browsing, package search, service booking, user reviews, and booking history.",
     category: "Web App",
     tags: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
