@@ -47,7 +47,7 @@ export default function Projects() {
             </div>
             <div className="text-left">
               <p className="font-semibold text-white text-sm">Kedar Thakar</p>
-              <p className="text-xs text-dark-400">@kedarthakar</p>
+              <p className="text-xs text-dark-400">@kedarthaker</p>
             </div>
           </div>
         </motion.div>
