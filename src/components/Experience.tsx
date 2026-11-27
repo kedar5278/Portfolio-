@@ -12,7 +12,7 @@ export default function Experience() {
 
   return (
     <SectionWrapper id="experience">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <SectionHeader
           title="Work Experience"
           subtitle="My professional journey and the impact I've made"
@@ -49,15 +49,19 @@ export default function Experience() {
                     {exp.role}
                   </h3>
                   <div className="flex items-center gap-2 mb-4">
-                    <a
-                      href={exp.companyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-accent-400 font-medium hover:text-accent-300 transition-colors flex items-center gap-1"
-                    >
-                      {exp.company}
-                      {exp.companyUrl !== "#" && <FiExternalLink className="w-3 h-3" />}
-                    </a>
+                    {exp.companyUrl ? (
+                      <a
+                        href={exp.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 font-medium text-accent-400 transition-colors hover:text-accent-300"
+                      >
+                        {exp.company}
+                        <FiExternalLink className="h-3 w-3" />
+                      </a>
+                    ) : (
+                      <span className="font-medium text-accent-400">{exp.company}</span>
+                    )}
                     <span className="text-dark-500">·</span>
                     <span className="text-dark-400 text-sm">{exp.location}</span>
                   </div>
