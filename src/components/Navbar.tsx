@@ -61,17 +61,14 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
           <motion.button
             onClick={() => scrollTo("#home")}
             className="flex items-center gap-2 group"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary-500/25 group-hover:shadow-primary-500/40 transition-shadow">
-              KT
-            </div>
-            <span className="text-lg font-bold text-white hidden sm:block">
+            <span className="text-lg font-bold text-white">
               Kedar<span className="text-primary-400">.</span>
             </span>
           </motion.button>
@@ -102,7 +99,7 @@ export default function Navbar() {
 
           {/* Let's Talk Dropdown */}
           <div ref={talkRef} className="hidden md:block relative">
-            <button onClick={() => setIsTalkOpen(!isTalkOpen)}>
+            <button type="button" aria-expanded={isTalkOpen} aria-label="Open contact options" onClick={() => setIsTalkOpen(!isTalkOpen)}> 
               <StarBorder as="span" color="#6366f1" speed="3s">
                 Let&apos;s Talk
               </StarBorder>
@@ -143,6 +140,8 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
             className="md:hidden relative w-10 h-10 flex items-center justify-center"
           >
             <div className="flex flex-col gap-1.5">
