@@ -9,15 +9,15 @@ export const personalInfo = {
   tagline: "Hardworking. Self-Motivated. Results-Driven.",
   about: `I'm a Computer Engineering student at Government Polytechnic Jamnagar with a passion for web development and digital marketing. I build modern, responsive websites using React, Next.js, and Tailwind CSS while also managing marketing strategy for Airavat Security Service. I love turning ideas into functional, beautiful digital products.`,
   aboutExtended: `From building tourism platforms and corporate websites to managing end-to-end marketing campaigns — I sit at the intersection of technology and creativity. Currently pursuing my Diploma in Computer Engineering while working on real-world projects that combine my development skills with marketing expertise. I believe in learning by building, and every project teaches me something new.`,
-  resumeUrl: "#",
+  resumeUrl: "",
 };
 
 export const socialLinks = {
   email: "mailto:kedarthakar5278@gmail.com",
   phone: "tel:+919662955278",
-  linkedin: "https://linkedin.com/",
-  instagram: "https://instagram.com/",
-  twitter: "https://twitter.com/",
+  linkedin: "",
+  instagram: "",
+  twitter: "",
 };
 
 export interface Skill {
@@ -70,7 +70,7 @@ export const experiences = [
     id: 2,
     role: "Freelance Web Developer",
     company: "Self-Employed",
-    companyUrl: "#",
+    companyUrl: "",
     location: "Jamnagar, Gujarat",
     period: "2023 — Present",
     description: "Building web projects and learning modern frameworks while pursuing Diploma in Computer Engineering. Developed multiple live projects including a travel booking platform.",
@@ -89,7 +89,7 @@ export const education = [
     degree: "Diploma — Computer Engineering",
     institution: "Government Polytechnic, Jamnagar",
     type: "Full-Time | Currently Pursuing",
-    period: "2023 — 2026",
+    period: "2024 — 2027",
     highlights: ["Programming Fundamentals", "Data Structures & Algorithms", "Web Development", "Database Management", "Computer Networks"],
     icon: "code",
   },
@@ -127,7 +127,7 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Portfolio Website",
-    url: "#",
+    url: "",
     description: "This very portfolio — a modern, animated developer portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. Featuring particle effects, glassmorphism, and smooth scroll animations.",
     category: "Web App",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
