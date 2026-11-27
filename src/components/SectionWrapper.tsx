@@ -21,7 +21,7 @@ export function SectionWrapper({ children, id, className = "" }: Props) {
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`relative scroll-mt-24 py-16 sm:py-20 md:py-32 ${className}`
+      className={`relative scroll-mt-24 py-16 sm:py-20 md:py-32 ${className}`}
     >
       {children}
     </motion.section>
