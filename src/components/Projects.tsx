@@ -11,7 +11,6 @@ import {
   SiReact,
   SiTailwindcss,
   SiTypescript,
-  SiJavascript,
 } from "react-icons/si";
 
 const tagIcons: Record<string, React.ReactNode> = {
@@ -27,39 +26,21 @@ export default function Projects() {
 
   return (
     <SectionWrapper id="projects">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeader
           title="Featured Projects"
           subtitle="Things I've built and shipped"
           highlight="Projects"
         />
 
-        {/* Profile-style header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-10"
-        >
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-white/5 border border-white/10">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary-500/20">
-              KT
-            </div>
-            <div className="text-left">
-              <p className="font-semibold text-white text-sm">Kedar Thakar</p>
-              <p className="text-xs text-dark-400">@kedarthaker</p>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Linktree-style project cards */}
         <div ref={ref} className="space-y-4">
           {projects.map((project, i) => (
             <motion.a
               key={project.id}
-              href={project.url}
-              target={project.url !== "#" ? "_blank" : undefined}
-              rel={project.url !== "#" ? "noopener noreferrer" : undefined}
+              href={project.url || undefined}
+              target={project.url ? "_blank" : undefined}
+              rel={project.url ? "noopener noreferrer" : undefined}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.1 }}
@@ -81,11 +62,11 @@ export default function Projects() {
                       <h3 className="text-lg font-bold text-white group-hover:text-primary-300 transition-colors truncate">
                         {project.title}
                       </h3>
-                      <FiExternalLink className="w-4 h-4 text-dark-500 group-hover:text-primary-400 transition-colors shrink-0 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      {project.url && <FiExternalLink className="h-4 w-4 shrink-0 text-dark-500 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary-400 group-hover:opacity-100" />}
                     </div>
 
                     {/* URL */}
-                    {project.url !== "#" && (
+                    {project.url && (
                       <p className="text-xs text-dark-500 mb-2 truncate font-mono">
                         {project.url.replace("https://", "")}
                       </p>
