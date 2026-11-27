@@ -49,7 +49,7 @@ export default function Contact() {
                 {[
                   { icon: <FiMail className="w-5 h-5" />, label: "Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
                   { icon: <FiPhone className="w-5 h-5" />, label: "Phone", value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
-                  { icon: <FiMapPin className="w-5 h-5" />, label: "Location", value: personalInfo.location, href: "#" },
+                  { icon: <FiMapPin className="w-5 h-5" />, label: "Location", value: personalInfo.location, href: "https://www.google.com/maps/search/?api=1&query=Jamnagar%2C%20Gujarat%2C%20India" },
                 ].map((item) => (
                   <a
                     key={item.label}
