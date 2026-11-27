@@ -21,7 +21,7 @@ export function SectionWrapper({ children, id, className = "" }: Props) {
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`relative py-24 md:py-32 ${className}`}
+      className={`relative scroll-mt-24 py-16 sm:py-20 md:py-32 ${className}`
     >
       {children}
     </motion.section>
@@ -33,7 +33,7 @@ export function SectionHeader({ title, subtitle, highlight }: { title: string; s
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <div ref={ref} className="text-center mb-16 md:mb-20">
+    <div ref={ref} className="mb-12 px-2 text-center sm:mb-16 md:mb-20">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={isInView ? { opacity: 1, scale: 1 } : {}}
