@@ -30,7 +30,7 @@ export default function Education() {
 
   return (
     <SectionWrapper id="education">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <SectionHeader
           title="Education"
           subtitle="The academic foundation behind my skills"
