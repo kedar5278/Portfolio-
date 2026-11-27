@@ -15,20 +15,16 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      const { name, email, subject, message } = formData;
-      window.open(
-        `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`,
-        "_blank"
-      );
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
+    const { name, email, subject, message } = formData;
+    const composeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+    window.open(composeUrl, "_blank", "noopener,noreferrer");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
   };
 
   return (
     <SectionWrapper id="contact">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
           title="Get In Touch"
           subtitle="Have a project in mind or just want to connect? I'd love to hear from you"
@@ -43,7 +39,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="glass-card p-8">
+            <div className="glass-card p-5 sm:p-8">
               <h3 className="text-xl font-bold text-white mb-6">Let&apos;s work together</h3>
               <p className="text-dark-300 text-sm leading-relaxed mb-8">
                 Whether you need marketing strategy, brand consulting, or a creative partner for your next campaign — I&apos;m just a message away.
@@ -53,7 +49,7 @@ export default function Contact() {
                 {[
                   { icon: <FiMail className="w-5 h-5" />, label: "Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
                   { icon: <FiPhone className="w-5 h-5" />, label: "Phone", value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
-                  { icon: <FiMapPin className="w-5 h-5" />, label: "Location", value: personalInfo.location, href: "#" },
+                  { icon: <FiMapPin className="w-5 h-5" />, label: "Location", value: personalInfo.location, href: "https://www.google.com/maps/search/?api=1&query=Jamnagar%2C%20Gujarat%2C%20India" },
                 ].map((item) => (
                   <a
                     key={item.label}
@@ -82,7 +78,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="glass-card space-y-5 p-5 sm:space-y-6 sm:p-8">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-dark-300 mb-2">Your Name</label>
